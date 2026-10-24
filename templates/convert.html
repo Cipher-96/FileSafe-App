@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-shell">
+  <div class="container">
+    <div class="page-card">
+      <h1>{{ heading }}</h1>
+      <p style="color: var(--muted);">{{ intro }}</p>
+      <div class="conversion-shell" style="margin-top: 28px;">
+        <div class="upload-panel">
+          <form data-conversion-form data-source="{{ source }}" data-target="{{ target }}">
+            <div class="drag-drop-zone" tabindex="0">
+              <div style="font-size: 2rem; margin-bottom: 8px;">📤</div>
+              <div>Drag & drop a file here</div>
+              <small class="drop-file-name">or click to select</small>
+            </div>
+            <input type="file" name="file" class="file-input" accept=".doc,.docx,.ppt,.pptx,.xls,.xlsx,.pdf,.jpg,.jpeg,.png,.html" />
+            <div class="form-row">
+              <div>
+                <label class="field-label">From</label>
+                <select class="select-box" name="source">
+                  <option value="{{ source }}" selected>{{ source|upper }}</option>
+                  <option value="docx">DOCX</option>
+                  <option value="pptx">PPTX</option>
+                  <option value="xlsx">XLSX</option>
+                  <option value="pdf">PDF</option>
+                  <option value="jpg">JPG</option>
+                  <option value="png">PNG</option>
+                  <option value="html">HTML</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label">To</label>
+                <select class="select-box" name="target">
+                  <option value="{{ target }}" selected>{{ target|upper }}</option>
+                  <option value="pdf">PDF</option>
+                  <option value="docx">DOCX</option>
+                  <option value="pptx">PPTX</option>
+                  <option value="xlsx">XLSX</option>
+                  <option value="png">PNG</option>
+                  <option value="jpg">JPG</option>
+                  <option value="html">HTML</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary btn-block" type="submit">Convert file</button>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <div class="status-text">Preparing upload...</div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result-card" style="display: none;">
+            <h3>Conversion ready</h3>
+            <div style="color: var(--muted); margin-bottom: 18px;">Your converted file is ready to download.</div>
+            <a class="download-link" id="download-link" href="#">Download converted file</a>
+          </div>
+          <div class="hint-box">
+            <strong>Privacy-safe process:</strong>
+            <ul><li>Files are temporarily processed and deleted afterwards.</li><li>No login, no tracking, no personal data collection.</li><li>Max file size: 100 MB.</li></ul>
+          </div>
+          <div class="ad-block">AdSense-ready placement • contextual ad block</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

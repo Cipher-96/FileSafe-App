@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-card">
+      <div class="hero-badge">Privacy-first • No login • Temp file deletion</div>
+      <h1 class="hero-title">Convert files <span class="text-highlight">securely</span> to PDF and more.</h1>
+      <p class="hero-copy">Upload DOCX, XLSX, PPTX, JPG, PNG or PDF files and convert them without an account, tracking, or personal data collection.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#convert">Convert now</a>
+        <a class="btn btn-secondary" href="/about">Learn more</a>
+      </div>
+      <div class="meta-row">
+        <span class="meta-pill">No login</span>
+        <span class="meta-pill">100 MB max</span>
+        <span class="meta-pill">GDPR-aware</span>
+      </div>
+    </div>
+    <div class="hero-card visual-panel">
+      <div class="visual-header">
+        <div class="dot-row">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span style="color: var(--muted);">Secure conversion</span>
+      </div>
+      <div class="step">
+        <div class="step-icon">1</div>
+        <div><strong>Upload document</strong><span>DOCX, PDF, JPG, XLSX</span></div>
+        <span class="step-tag">Ready</span>
+      </div>
+      <div class="step" style="margin-top: 12px;">
+        <div class="step-icon">2</div>
+        <div><strong>Choose output</strong><span>PDF, Word, Excel, PowerPoint</span></div>
+        <span class="step-tag">Safe</span>
+      </div>
+      <div class="step" style="margin-top: 12px;">
+        <div class="step-icon">3</div>
+        <div><strong>Download result</strong><span>Temporary files removed automatically</span></div>
+        <span class="step-tag">Done</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="convert" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Popular conversion tools</h2>
+    </div>
+    <div class="conversion-shell">
+      <div class="upload-panel">
+        <form data-conversion-form data-source="docx" data-target="pdf">
+          <label class="field-label">Convert file</label>
+          <div class="drag-drop-zone" tabindex="0">
+            <div style="font-size: 2rem; margin-bottom: 8px;">📁</div>
+            <div>Drag & drop or select a file</div>
+            <small class="drop-file-name">No file selected</small>
+          </div>
+          <input type="file" name="file" class="file-input" accept=".doc,.docx,.ppt,.pptx,.xls,.xlsx,.pdf,.jpg,.jpeg,.png,.html" />
+          <div class="form-row">
+            <div>
+              <label class="field-label">From</label>
+              <select class="select-box" name="source">
+                <option value="docx">DOCX</option>
+                <option value="pdf">PDF</option>
+                <option value="pptx">PPTX</option>
+                <option value="xlsx">XLSX</option>
+                <option value="jpg">JPG</option>
+                <option value="png">PNG</option>
+                <option value="html">HTML</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label">To</label>
+              <select class="select-box" name="target">
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+                <option value="pptx">PPTX</option>
+                <option value="xlsx">XLSX</option>
+                <option value="jpg">JPG</option>
+                <option value="png">PNG</option>
+                <option value="html">HTML</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary btn-block" type="submit">Convert file</button>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="status-text">Preparing upload...</div>
+          </div>
+        </form>
+      </div>
+      <div>
+        <div class="result-card" style="display: none;">
+          <h3>Conversion ready</h3>
+          <div style="color: var(--muted); margin-bottom: 18px;">Your converted file is ready to download.</div>
+          <a class="download-link" id="download-link" href="#">Download converted file</a>
+        </div>
+        <div class="ad-block">AdSense-ready placement • contextual block</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header"><h2>Why choose FileSafe</h2></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="card-icon">🔒</div><h3>Private by design</h3><p>No account, no tracking, no personal data, and temporary file cleanup.</p></div>
+      <div class="info-card"><div class="card-icon">⚡</div><h3>Fast and simple</h3><p>Built for quick conversion with no unnecessary friction.</p></div>
+      <div class="info-card"><div class="card-icon">🧾</div><h3>EU-ready trust</h3><p>Designed for a public utility feel with clear legal-safe language and privacy-first handling.</p></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
